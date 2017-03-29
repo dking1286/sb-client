@@ -1,0 +1,1 @@
+document.write('Another piece of text!');
