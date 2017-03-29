@@ -1,1 +1,1 @@
-document.write('Another piece of text!');
+import app from './app';
