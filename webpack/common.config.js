@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
@@ -15,22 +16,18 @@ module.exports = {
     ]
   },
   output: {
-    path: path.join(__dirname, '..', 'dist'),
+    path: path.join(__dirname, '..', 'dist')
   },
   module: {
     rules: [
       {
         test: /.js$/,
-        use: ['babel-loader'],
+        use: ['babel-loader', 'eslint-loader'],
         exclude: /node_modules/
       },
       {
         test: /.scss$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
-        ]
+        use: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
   },

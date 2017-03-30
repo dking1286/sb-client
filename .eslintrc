@@ -1,5 +1,7 @@
 {
   "extends": "airbnb",
-  "comma-dangle": ["error", "never"],
-  "no-use-before-define": 0
+  "rules": {
+    "comma-dangle": ["error", "never"],
+    "no-use-before-define": 0
+  }
 }

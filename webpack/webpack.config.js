@@ -1,7 +1,11 @@
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable no-console */
+/* eslint-disable import/no-dynamic-require */
+/* eslint-disable global-require */
 const webpackMerge = require('webpack-merge');
 const path = require('path');
 const fs = require('fs');
-const commonConfig = require('./common.config.js')
+const commonConfig = require('./common.config.js');
 
 function getConfigByEnvironment(env) {
   const envConfigPath = path.join(__dirname, `${env}.config.js`);

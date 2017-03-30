@@ -1,10 +1,11 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
   output: {
     publicPath: '/',
-    filename: '[name].js'    
+    filename: '[name].js'
   },
   devServer: {
     contentBase: path.join(__dirname, '..', 'dist'),
@@ -15,4 +16,4 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin()
   ]
-}
+};
