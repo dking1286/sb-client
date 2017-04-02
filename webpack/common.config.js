@@ -22,7 +22,7 @@ module.exports = {
     rules: [
       {
         test: /.js$/,
-        use: ['babel-loader', 'eslint-loader'],
+        use: ['babel-loader'],
         exclude: /node_modules/
       },
       {
@@ -41,7 +41,7 @@ module.exports = {
         removeComments: true,
         removeRedundantAttributes: true,
         removeScriptTypeAttributes: true,
-        removeStyleLinkTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true
       }
     }),
     new webpack.optimize.CommonsChunkPlugin({
