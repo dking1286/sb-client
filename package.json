@@ -7,11 +7,14 @@
   "author": "Daniel King <daniel.oliver.king@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build:prod": "NODE_ENV=production webpack --progress --colors --config webpack/webpack.config.js",
-    "start:dev": "NODE_ENV=development webpack-dev-server --progress --colors --config webpack/webpack.config.js"
+    "build:prod": "NODE_ENV=production node scripts/generateConfig && NODE_ENV=production webpack --progress --colors --config webpack/webpack.config.js",
+    "start:dev": "NODE_ENV=development node scripts/generateConfig && NODE_ENV=development webpack-dev-server --progress --colors --config webpack/webpack.config.js"
   },
   "dependencies": {
-    "angular": "^1.6.3"
+    "angular": "^1.6.3",
+    "angular-resource": "^1.6.4",
+    "config": "^1.25.1",
+    "express": "^4.15.2"
   },
   "devDependencies": {
     "babel-core": "^6.24.0",
