@@ -9,7 +9,7 @@ module.exports = {
       'angular'
     ],
     bundle: [
-      './app'
+      './app/index.js'
     ],
     styles: [
       './app/styles/styles.scss'
@@ -28,6 +28,10 @@ module.exports = {
       {
         test: /.scss$/,
         use: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      {
+        test: /.html$/,
+        use: ['html-loader']
       }
     ]
   },

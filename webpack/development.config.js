@@ -11,7 +11,10 @@ module.exports = {
     contentBase: path.join(__dirname, '..', 'dist'),
     compress: true,
     port: 9090,
-    hot: true
+    hot: true,
+    watchOptions: {
+      ignored: path.join(__dirname, '..', 'app/config.js')
+    }
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin()
