@@ -1,9 +1,7 @@
 import angular from 'angular';
-import rolesController from './scripts/roles/rolesController';
 
-const MODULE_NAME = 'sbClient.app';
+const MODULE_NAME = 'sbClient';
 
-angular
-  .module(MODULE_NAME, [rolesController]);
+angular.module(MODULE_NAME, []);
 
 export default MODULE_NAME;

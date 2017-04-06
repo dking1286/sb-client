@@ -1,2 +1,5 @@
 /* eslint-disable no-unused-vars */
-import app from './app';
+import './app';
+import './scripts';
+import './view-components';
+
