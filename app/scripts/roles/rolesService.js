@@ -1,11 +1,3 @@
-import angular from 'angular';
-import appName from '../../app';
-import '../api';
-
-angular
-  .module(appName)
-  .factory('rolesService', ['apiService', createRolesService]);
-
 function createRolesService(apiService) {
   return {
     getAll() {
@@ -13,3 +5,7 @@ function createRolesService(apiService) {
     }
   };
 }
+
+createRolesService.$inject = ['apiService'];
+
+export default createRolesService;
