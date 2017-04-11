@@ -23,6 +23,11 @@ In development mode, the Webpack Dev Server has
 Hot Module Replacement enabled and will recompile
 when changes occur in the `app` directory.
 
+To run the mock API:
+```bash
+yarn run mock-api
+```
+
 ## Production
 
 To build the project for production,
