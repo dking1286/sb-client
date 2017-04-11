@@ -10,9 +10,6 @@ module.exports = {
     ],
     bundle: [
       './app/index.js'
-    ],
-    styles: [
-      './app/styles/styles.scss'
     ]
   },
   output: {
@@ -27,7 +24,11 @@ module.exports = {
       },
       {
         test: /.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: [
+          'style-loader',
+          'css-loader?module',
+          'sass-loader'
+        ]
       },
       {
         test: /.html$/,

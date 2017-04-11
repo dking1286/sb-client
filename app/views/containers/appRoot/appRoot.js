@@ -5,9 +5,9 @@ const appRoot = {
   controller: appRootController
 };
 
-function appRootController(rolesService) {
+function appRootController($scope, rolesService) {
   const $ctrl = this;
-  $ctrl.label = 'hello';
+
   $ctrl.roles = [];
 
   rolesService.getAll()
@@ -16,6 +16,6 @@ function appRootController(rolesService) {
     });
 }
 
-appRootController.$inject = ['rolesService'];
+appRootController.$inject = ['$scope', 'rolesService'];
 
 export default appRoot;

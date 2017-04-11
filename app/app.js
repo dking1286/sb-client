@@ -1,8 +1,8 @@
 import angular from 'angular';
-import viewComponents from './viewComponents';
+import views from './views';
 
 const app = angular.module('sbClient', [
-  viewComponents.name
+  views.name
 ]);
 
 export default app;
