@@ -1,1 +1,6 @@
 @import "./colors";
+@import "./fonts";
+
+body {
+  @include font-light();
+}
