@@ -1,4 +1,5 @@
 const express = require('express');
+const roles = require('./roles.json');
 
 const app = express();
 
@@ -8,9 +9,7 @@ app.use((req, res, next) => {
 });
 
 app.get('/roles', (req, res) => {
-  res.json({
-    roles: [{ name: 'blahblah' }]
-  });
+  res.json({ roles });
 });
 
 app.listen(3000, () => {

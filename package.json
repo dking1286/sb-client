@@ -9,7 +9,7 @@
   "scripts": {
     "build:prod": "NODE_ENV=production node scripts/generateConfig && NODE_ENV=production webpack --verbose --progress --colors --config webpack/webpack.config.js",
     "start:dev": "NODE_ENV=development webpack-dev-server --colors --config webpack/webpack.config.js",
-    "mock-api": "NODE_ENV=development nodemon server"
+    "mock-api": "NODE_ENV=development nodemon mock-api"
   },
   "dependencies": {
     "angular": "^1.6.3",
