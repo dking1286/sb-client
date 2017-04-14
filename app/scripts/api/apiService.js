@@ -8,7 +8,7 @@ function createApiService($http) {
   return {
     get(url) {
       return $http.get(prependApiHostname(url))
-        .then(response => response.data.roles);
+        .then(response => response.data);
     }
   };
 }
