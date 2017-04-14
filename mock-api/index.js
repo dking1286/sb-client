@@ -1,5 +1,5 @@
 const express = require('express');
-const roles = require('./roles.json');
+const companies = require('./companies.json');
 
 const app = express();
 
@@ -8,8 +8,8 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get('/roles', (req, res) => {
-  res.json({ roles });
+app.get('/companies', (req, res) => {
+  res.json({ companies });
 });
 
 app.listen(3000, () => {
