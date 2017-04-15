@@ -2,7 +2,6 @@ import angular from 'angular';
 import companies from '../scripts/companies';
 import appRoot from './containers/appRoot/appRoot';
 import dreamJobContainer from './containers/dreamJobContainer/dreamJobContainer';
-import necessarySkillsContainer from './containers/necessarySkillsContainer/necessarySkillsContainer';
 import backButton from './components/backButton/backButton';
 import dreamJobHeading from './components/dreamJobHeading/dreamJobHeading';
 import dreamJobPage from './components/dreamJobPage/dreamJobPage';
@@ -17,7 +16,6 @@ const viewComponents = angular.module('sbClient.viewComponents', [
 viewComponents
   .component('appRoot', appRoot)
   .component('dreamJobContainer', dreamJobContainer)
-  .component('necessarySkillsContainer', necessarySkillsContainer)
   .component('backButton', backButton)
   .component('dreamJobHeading', dreamJobHeading)
   .component('dreamJobPage', dreamJobPage)
