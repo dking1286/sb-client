@@ -12,6 +12,12 @@ yarn
 ```
 
 ## Development
+
+First, it is necessary to compile the client-side config file
+```bash
+yarn run generate-config:dev
+```
+
 To run the app in development mode,
 ```bash
 yarn run start:dev
@@ -30,7 +36,12 @@ yarn run mock-api
 
 ## Production
 
-To build the project for production,
+To build the project for production, compile the config file:
+```bash
+yarn run generate-config:dev
+```
+
+Then, run the full production build:
 ```bash
 yarn run build:prod
 ```

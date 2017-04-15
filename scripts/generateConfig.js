@@ -4,9 +4,9 @@ const path = require('path');
 
 const configPath = path.join(__dirname, '..', 'app', 'config.js');
 
-fs.writeFileSync(configPath, `
-  // Automatically generated based on the config directory
-  export default ${JSON.stringify(config, null, '  ')}
-`)
+const configFile = fs.createWriteStream(configPath, { defaultEncoding: 'utf8' });
+configFile.write('// Automatically generated based on the config directory\n');
+configFile.write(`export default ${JSON.stringify(config, null, '  ')}`);
+configFile.end();
 
-process.exit();
+configFile.on('finish', () => process.exit());
