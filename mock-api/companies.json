@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Snap Inc.",
+    "roles": [
+      { "name": "iOS Engineer" }
+    ]
+  },
+  {
+    "name": "Facebook",
+    "roles": [
+      { "name": "Product Manager" }
+    ]
+  },
+  {
+    "name": "AirBnB",
+    "roles": [
+      { "name": "UX Designer" }
+    ]
+  },
+  {
+    "name": "MedCircle",
+    "roles": [
+      { "name": "Fullstack Software Engineer" }
+    ]
+  }
+]
