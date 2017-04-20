@@ -6,10 +6,17 @@ const path = require('path');
 module.exports = {
   entry: {
     vendor: [
-      'angular'
+      'react',
+      'react-dom',
+      'react-redux',
+      'redux',
+      'redux-saga',
+      'redux-stack',
+      'prop-types',
+      'axios'
     ],
     bundle: [
-      './app/index.js'
+      './src/index.js'
     ]
   },
   output: {
@@ -39,7 +46,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Careeer Role Finder',
-      template: path.join(__dirname, '..', 'app/index.html'),
+      template: path.join(__dirname, '..', 'src/index.html'),
       filename: 'index.html',
       minify: {
         collapseWhitespace: true,

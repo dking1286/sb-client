@@ -1,6 +1,8 @@
 @import "./colors";
 @import "./fonts";
 
+$pagewidth: 900px;
+
 body {
   @include font-light();
 }

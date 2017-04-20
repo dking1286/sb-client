@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Objective-C",
+    "description": "A general purpose programming language that adds Smalltalk-style message passing to the C language",
+    "wikipediaLink": "https://en.wikipedia.org/wiki/Objective-C"
+  },
+  {
+    "name": "Git",
+    "description": "A version control systme for tracking changes in computer files",
+    "wikipediaLink": "https://en.wikipedia.org/wiki/Git"
+  }
+]
