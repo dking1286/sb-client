@@ -1,4 +1,4 @@
-import * as api from '../api';
+import * as api from '../core/api';
 
 export function getAll() {
   return api.get('/companies')

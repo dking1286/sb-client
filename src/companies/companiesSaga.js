@@ -1,5 +1,5 @@
 import { fork, call, put } from 'redux-saga/effects';
-import { COMPANIES_GET_ALL } from '../actions/actionTypes';
+import { COMPANIES_GET_ALL } from './companiesActionTypes';
 import * as companiesActions from './companiesActions';
 import * as companiesService from './companiesService';
 

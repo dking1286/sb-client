@@ -1,3 +1,1 @@
-export const CHANGE_VIEW = 'CHANGE_VIEW';
-
 export const COMPANIES_GET_ALL = 'COMPANIES_GET_ALL';

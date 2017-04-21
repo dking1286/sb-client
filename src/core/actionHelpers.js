@@ -1,4 +1,8 @@
 export function actionCreator(type) {
+  if (typeof type !== 'string') {
+    throw new TypeError(`Invalid type provided to actionCreator: ${type}`);
+  }
+
   return function (payload) {
     return { type, payload };
   };
