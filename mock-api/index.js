@@ -1,5 +1,6 @@
 const express = require('express');
 const companies = require('./companies.json');
+
 const skills = require('./skills.json');
 
 const app = express();
