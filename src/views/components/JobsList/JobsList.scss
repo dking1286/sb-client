@@ -1,0 +1,14 @@
+@import "../../../styles/common";
+
+.outer {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  flex-basis: content;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

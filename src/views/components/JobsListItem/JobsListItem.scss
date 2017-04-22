@@ -1,0 +1,23 @@
+@import "../../../styles/common";
+
+$tiledimension: 155px;
+
+.tile {
+  width: $tiledimension;
+  height: $tiledimension;
+  margin: 5px;
+  padding: 12px;
+}
+
+.listItem {
+  @extend .tile;
+  display: flex;
+  align-items: center;
+  background-color: $yellow;
+  text-align: center;
+}
+
+.filler {
+  @extend .tile;
+  background-color: white;
+}

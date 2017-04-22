@@ -14,10 +14,18 @@
     "generate-config:prod": "NODE_ENV=production node scripts/generateConfig"
   },
   "dependencies": {
-    "angular": "^1.6.3",
-    "angular-ui-router": "^0.4.2",
+    "axios": "^0.16.1",
+    "babel-polyfill": "^6.23.0",
     "config": "^1.25.1",
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "prop-types": "^15.5.8",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.4",
+    "redux": "^3.6.0",
+    "redux-devtools-extension": "^2.13.0",
+    "redux-saga": "^0.14.6",
+    "redux-stack": "^1.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.24.0",
