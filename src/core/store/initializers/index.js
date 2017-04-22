@@ -3,7 +3,7 @@ import reduxSaga from './reduxSaga';
 import reducers from './reducers';
 
 export default [
-  reduxDevTools,
   reduxSaga,
+  reduxDevTools,
   reducers
 ];

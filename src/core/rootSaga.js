@@ -9,7 +9,7 @@ function* sagaRouter(action) {
   const resource = getResourceFromType(action);
   switch (resource) {
     case 'COMPANIES':
-      yield call(handleCompaniesActions);
+      yield call(handleCompaniesActions, action);
       break;
     default:
       break;

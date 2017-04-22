@@ -1,4 +1,4 @@
-import { fork, call, put } from 'redux-saga/effects';
+import { call, put } from 'redux-saga/effects';
 import { COMPANIES_GET_ALL } from './companiesActionTypes';
 import * as companiesActions from './companiesActions';
 import * as companiesService from './companiesService';
@@ -7,7 +7,7 @@ export default function* handleCompaniesActions(action) {
   const { type } = action;
   switch (type) {
     case COMPANIES_GET_ALL:
-      yield fork(getAll);
+      yield call(getAll);
       break;
     default:
       break;

@@ -10,6 +10,10 @@
     }],
     "func-names": 0,
     "react/jsx-filename-extension": 0,
-    "arrow-parens": 0
+    "arrow-parens": 0,
+    "import/extensions": 0,
+    "import/no-unresolved": 0,
+    "import/no-extraneous-dependencies": 0,
+    "react/no-array-index-key": 0
   }
 }

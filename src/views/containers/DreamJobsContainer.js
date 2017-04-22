@@ -1,22 +1,47 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as companiesActionCreators from 'companies/companiesActions';
+import DreamJobsPage from '../components/DreamJobsPage/DreamJobsPage';
 
-const DreamJobsContainer = ({ viewActions }) => (
-  <div>
-    <h1>Hello world!</h1>
-    <button onClick={() => viewActions.change({ currentViewName: 'blahblah' })}>
-      Click me
-    </button>
-  </div>
-);
+class DreamJobsContainer extends React.Component {
+  componentDidMount() {
+    const { companiesActions } = this.props;
+    companiesActions.getAll();
+  }
+
+  render() {
+    const { currentCompanies } = this.props;
+    return (
+      <DreamJobsPage roles={companiesListToRolesList(currentCompanies)} />
+    );
+  }
+}
 
 DreamJobsContainer.propTypes = {
-  viewActions: PropTypes.objectOf(PropTypes.func).isRequired
+  currentCompanies: PropTypes.arrayOf(PropTypes.object).isRequired,
+  companiesActions: PropTypes.objectOf(PropTypes.func).isRequired
 };
+
+const mapStateToProps = (state) => ({
+  currentCompanies: state.companies.currentCompanies
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  companiesActions: bindActionCreators(companiesActionCreators, dispatch)
+});
 
 const companyToRolesList = (company) => company.roles.map(role => ({
   name: role.name,
   company: { name: company.name }
 }));
 
-export default DreamJobsContainer;
+const companiesListToRolesList = (companies) => {
+  return companies.reduce((roles, company) => {
+    companyToRolesList(company).forEach(role => roles.push(role));
+    return roles;
+  }, []);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(DreamJobsContainer);
