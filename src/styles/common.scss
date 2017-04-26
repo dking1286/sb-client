@@ -6,3 +6,8 @@ $pagewidth: 900px;
 body {
   @include font-light();
 }
+
+button {
+  background-color: inherit;
+  border: none;
+}

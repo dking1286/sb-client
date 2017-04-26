@@ -13,7 +13,8 @@ module.exports = {
       'redux-saga',
       'redux-stack',
       'prop-types',
-      'axios'
+      'axios',
+      '@blueprintjs/core'
     ],
     bundle: [
       './src/index.js'

@@ -1,6 +1,7 @@
 export default {
   view: {
-    currentViewName: 'DreamJobs'
+    currentViewName: 'DreamJobs',
+    params: {}
   },
   roles: {
     currentRole: null

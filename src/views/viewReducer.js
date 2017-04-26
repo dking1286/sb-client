@@ -5,7 +5,7 @@ export default (state = initialState.view, action) => {
   const { type, payload } = action;
   switch (type) {
     case VIEW_CHANGE:
-      return { ...state, currentViewName: payload.currentViewName };
+      return { ...state, ...payload };
     default:
       return state;
   }

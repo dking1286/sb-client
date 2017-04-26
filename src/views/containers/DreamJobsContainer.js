@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as companiesActionCreators from 'companies/companiesActions';
+import * as viewActionCreators from 'views/viewActions';
 import DreamJobsPage from '../components/DreamJobsPage/DreamJobsPage';
 
 class DreamJobsContainer extends React.Component {
@@ -12,16 +13,22 @@ class DreamJobsContainer extends React.Component {
   }
 
   render() {
-    const { currentCompanies } = this.props;
+    const { currentCompanies, viewActions } = this.props;
     return (
-      <DreamJobsPage roles={companiesListToRolesList(currentCompanies)} />
+      <DreamJobsPage
+        roles={companiesListToRolesList(currentCompanies)}
+        viewActions={viewActions}
+      />
     );
   }
 }
 
 DreamJobsContainer.propTypes = {
   currentCompanies: PropTypes.arrayOf(PropTypes.object).isRequired,
-  companiesActions: PropTypes.objectOf(PropTypes.func).isRequired
+  companiesActions: PropTypes.objectOf(PropTypes.func).isRequired,
+  viewActions: PropTypes.shape({
+    change: PropTypes.func.isRequired
+  }).isRequired
 };
 
 const mapStateToProps = (state) => ({
@@ -29,10 +36,12 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  companiesActions: bindActionCreators(companiesActionCreators, dispatch)
+  companiesActions: bindActionCreators(companiesActionCreators, dispatch),
+  viewActions: bindActionCreators(viewActionCreators, dispatch)
 });
 
 const companyToRolesList = (company) => company.roles.map(role => ({
+  id: role.id,
   name: role.name,
   company: { name: company.name }
 }));
