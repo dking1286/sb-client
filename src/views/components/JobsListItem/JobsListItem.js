@@ -2,31 +2,36 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './JobsListItem.scss';
 
-const JobsListItem = ({ isFiller, role }) => {
-  return isFiller ?
-    <div className={styles.filler} /> :
-
-    <div className={styles.listItem}>
-      <a
-        className={styles.listLink}
-      >
-        {role.name} at {role.company.name}
-      </a>
-    </div>;
-};
+const JobsListItem = ({ role, viewActions }) => (
+  <div className={styles.listItem}>
+    <button
+      className={styles.listLink}
+      onClick={() => viewActions.change({
+        currentViewName: 'ViewSkills',
+        params: {
+          roleId: role.id,
+          roleDescription: roleDescription(role)
+        }
+      })}
+    >
+      {roleDescription(role)}
+    </button>
+  </div>
+);
 
 JobsListItem.propTypes = {
-  isFiller: PropTypes.bool,
   role: PropTypes.shape({
-    name: PropTypes.string,
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
     company: PropTypes.shape({
-      name: PropTypes.string
-    })
+      name: PropTypes.string.isRequired
+    }).isRequired
+  }).isRequired,
+  viewActions: PropTypes.shape({
+    change: PropTypes.func.isRequired
   }).isRequired
 };
 
-JobsListItem.defaultProps = {
-  isFiller: false
-};
+const roleDescription = (role) => `${role.name} at ${role.company.name}`;
 
 export default JobsListItem;

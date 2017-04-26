@@ -11,21 +11,27 @@
     "start:dev": "NODE_ENV=development webpack-dev-server --colors --config webpack/webpack.config.js",
     "mock-api": "NODE_ENV=development nodemon mock-api",
     "generate-config:dev": "NODE_ENV=development node scripts/generateConfig",
-    "generate-config:prod": "NODE_ENV=production node scripts/generateConfig"
+    "generate-config:prod": "NODE_ENV=production node scripts/generateConfig",
+    "generate-component": "node scripts/createComponent.js",
+    "generate-container": "node scripts/createContainer.js"
   },
   "dependencies": {
+    "@blueprintjs/core": "^1.16.0",
     "axios": "^0.16.1",
     "babel-polyfill": "^6.23.0",
     "config": "^1.25.1",
     "express": "^4.15.2",
+    "file-loader": "^0.11.1",
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
+    "react-addons-css-transition-group": "^15.5.2",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
     "redux": "^3.6.0",
     "redux-devtools-extension": "^2.13.0",
     "redux-saga": "^0.14.6",
-    "redux-stack": "^1.0.1"
+    "redux-stack": "^1.0.1",
+    "url-loader": "^0.5.8"
   },
   "devDependencies": {
     "babel-core": "^6.24.0",

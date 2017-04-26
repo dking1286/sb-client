@@ -3,9 +3,9 @@
 .container {
   display: flex;
   justify-content: center;
+  background-color: $yellow;
 }
 
-.innerContainer {
-  width: 100%;
-  max-width: 900px;
+.heading {
+  font-size: 20px;
 }

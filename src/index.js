@@ -6,6 +6,12 @@
  */
 import 'babel-polyfill';
 
+/**
+ * Needed for correct blueprintjs styling
+ */
+import 'normalize.css/normalize.css';
+import '@blueprintjs/core/dist/blueprint.css';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
