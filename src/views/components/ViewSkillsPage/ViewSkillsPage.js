@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Spinner } from '@blueprintjs/core';
 import PageHeader from '../PageHeader/PageHeader';
 import ViewSkillsHeading from '../ViewSkillsHeading/ViewSkillsHeading';
 import SkillsList from '../SkillsList/SkillsList';
@@ -8,12 +9,13 @@ import styles from './ViewSkillsPage.scss';
 const ViewSkillsPage = ({ roleDescription, currentRole }) => (
   <div>
     <PageHeader />
+    <ViewSkillsHeading roleDescription={roleDescription} />
     {currentRole ?
-      <div>
-        <ViewSkillsHeading roleDescription={roleDescription} />
-        <SkillsList skills={currentRole ? currentRole.skills : []} />
-      </div> :
-      <p>Loading...</p>} {/* This placeholder will be replaced with a spinner*/}
+      <SkillsList
+        roleDescription={roleDescription}
+        skills={currentRole ? currentRole.skills : []}
+      /> :
+      <Spinner />}
   </div>
 );
 

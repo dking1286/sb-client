@@ -1,1 +1,11 @@
 @import "../../../styles/common";
+
+.container {
+  display: flex;
+  justify-content: center;
+  background-color: $yellow;
+}
+
+.heading {
+  font-size: 20px;
+}

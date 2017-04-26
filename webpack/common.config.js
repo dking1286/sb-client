@@ -8,6 +8,7 @@ module.exports = {
     vendor: [
       'react',
       'react-dom',
+      'react-addons-css-transition-group',
       'react-redux',
       'redux',
       'redux-saga',
@@ -32,12 +33,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /.js$/,
+        test: /\.js$/,
         use: ['babel-loader'],
         exclude: /node_modules/
       },
       {
-        test: /.scss$/,
+        test: /\.scss$/,
         use: [
           'style-loader',
           'css-loader?module',
@@ -45,8 +46,35 @@ module.exports = {
         ]
       },
       {
-        test: /.html$/,
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
+      },
+      {
+        test: /\.html$/,
         use: ['html-loader']
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif|svg|webm|ico)$/,
+        use: ['file-loader']
+      },
+      {
+        test: /\.[ot]tf$/,
+        use: ['url-loader?limit=65000&mimetype=application/octet-stream&name=fonts/[name].[ext]']
+      },
+      {
+        test: /\.woff$/,
+        use: ['url-loader?limit=65000&mimetype=application/font-woff&name=fonts/[name].[ext]']
+      },
+      {
+        test: /\.woff2$/,
+        use: ['url-loader?limit=65000&mimetype=application/font-woff2&name=fonts/[name].[ext]']
+      },
+      {
+        test: /\.eot$/,
+        use: ['url-loader?limit=65000&mimetype=application/vnd.ms-fontobject&name=fonts/[name].[ext]']
       }
     ]
   },
