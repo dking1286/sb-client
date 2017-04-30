@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import PageHeader from '../PageHeader/PageHeader';
-import DreamJobsHeading from '../DreamJobsHeading/DreamJobsHeading';
-import JobsList from '../JobsList/JobsList';
+import DreamJobsHeading from '../DreamJobsHeading';
+import PageHeader from '../PageHeader';
+import JobsList from '../JobsList';
 import styles from './DreamJobsPage.scss';
 
 const DreamJobsPage = ({ roles, viewActions }) => (

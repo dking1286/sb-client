@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import DreamJobsContainer from './DreamJobsContainer';
-import ViewSkillsContainer from './ViewSkillsContainer';
+import DreamJobsContainer from '../DreamJobsContainer';
+import ViewSkillsContainer from '../ViewSkillsContainer';
 
 const RootContainer = ({ currentViewName, params }) => {
   switch (currentViewName) {

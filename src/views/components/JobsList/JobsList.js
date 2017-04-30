@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import JobsListItem from '../JobsListItem/JobsListItem';
+import JobsListItem from '../JobsListItem';
 import styles from './JobsList.scss';
 
 const JobsList = ({ roles, viewActions }) => {
