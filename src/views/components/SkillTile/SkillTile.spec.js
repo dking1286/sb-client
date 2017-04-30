@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import renderer from 'react-test-renderer';
-import DreamJobsHeading from './DreamJobsHeading';
+import SkillTile from './SkillTile';
 
-describe('<DreamJobsHeading />', () => {
+describe('<SkillTile />', () => {
 
 });

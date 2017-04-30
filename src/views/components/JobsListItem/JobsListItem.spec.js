@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import renderer from 'react-test-renderer';
-import DreamJobsHeading from './DreamJobsHeading';
+import JobsListItem from './JobsListItem';
 
-describe('<DreamJobsHeading />', () => {
+describe('<JobsListItem />', () => {
 
 });

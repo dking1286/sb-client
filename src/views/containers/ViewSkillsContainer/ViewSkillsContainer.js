@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as rolesActionCreators from 'roles/rolesActions';
-import ViewSkillsPage from '../components/ViewSkillsPage/ViewSkillsPage';
+import ViewSkillsPage from 'views/components/ViewSkillsPage';
 
 class ViewSkillsContainer extends React.Component {
   componentDidMount() {

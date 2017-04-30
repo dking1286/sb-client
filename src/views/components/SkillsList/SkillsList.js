@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import HelpIcon from '../HelpIcon/HelpIcon';
-import SkillTile from '../SkillTile/SkillTile';
+import HelpIcon from '../HelpIcon';
+import SkillTile from '../SkillTile';
 import styles from './SkillsList.scss';
 
 const SkillsList = ({ roleDescription, skills }) => (

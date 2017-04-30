@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Spinner } from '@blueprintjs/core';
-import PageHeader from '../PageHeader/PageHeader';
-import ViewSkillsHeading from '../ViewSkillsHeading/ViewSkillsHeading';
-import SkillsList from '../SkillsList/SkillsList';
+import PageHeader from '../PageHeader';
+import ViewSkillsHeading from '../ViewSkillsHeading';
+import SkillsList from '../SkillsList';
 import styles from './ViewSkillsPage.scss';
 
 const ViewSkillsPage = ({ roleDescription, currentRole }) => (

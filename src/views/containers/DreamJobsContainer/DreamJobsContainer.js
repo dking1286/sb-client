@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as companiesActionCreators from 'companies/companiesActions';
 import * as viewActionCreators from 'views/viewActions';
-import DreamJobsPage from '../components/DreamJobsPage/DreamJobsPage';
+import DreamJobsPage from 'views/components/DreamJobsPage';
 
 class DreamJobsContainer extends React.Component {
   componentDidMount() {
