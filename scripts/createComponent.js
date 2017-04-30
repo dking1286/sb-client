@@ -1,39 +1,31 @@
 const fs = require('fs');
 const path = require('path');
+const {
+  componentBoilerplate,
+  stylesheetBoilerplate,
+  testBoilerplate,
+  indexBoilerplate
+} = require('./helpers/boilerplate');
+
 
 const componentFolder = (name) => path.join(__dirname, '..', 'src', 'views', 'components', name);
 
-const componentBoilerplate = (name) => `
-  import React from 'react';
-  import PropTypes from 'prop-types';
-  import styles from './${name}.scss';
-
-  const ${name} = () => (
-
-  );
-
-  ${name}.propTypes = {
-
-  };
-
-  export default ${name};
-
-`.trim().replace(/ {2}/g, '');
-
-const stylesheetBoilerplate = (name) => `
-  @import "../../../styles/common";
-`.trim().replace(/ {2}/g, '');
-
 const createComponent = (name) => {
+  const filesToWrite = [
+    { filename: `${name}.js`, content: componentBoilerplate(name) },
+    { filename: `${name}.scss`, content: stylesheetBoilerplate(name) },
+    { filename: `${name}.spec.js`, content: testBoilerplate(name) },
+    { filename: 'index.js', content: indexBoilerplate(name) }
+  ];
+
   fs.mkdirSync(componentFolder(name));
-  fs.writeFileSync(
-    path.join(componentFolder(name), `${name}.js`),
-    componentBoilerplate(name)
-  );
-  fs.writeFileSync(
-    path.join(componentFolder(name), `${name}.scss`),
-    stylesheetBoilerplate(name)
-  );
+
+  filesToWrite.forEach((file) => {
+    fs.writeFileSync(
+      path.join(componentFolder(name), file.filename),
+      file.content
+    );
+  });
 };
 
 
