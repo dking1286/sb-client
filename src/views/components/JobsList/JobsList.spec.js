@@ -4,5 +4,7 @@ import renderer from 'react-test-renderer';
 import JobsList from './JobsList';
 
 describe('<JobsList />', () => {
+  test('should have a test', () => {
 
+  });
 });

@@ -4,5 +4,7 @@ import renderer from 'react-test-renderer';
 import ViewSkillsPage from './ViewSkillsPage';
 
 describe('<ViewSkillsPage />', () => {
+  test('should have a test', () => {
 
+  });
 });

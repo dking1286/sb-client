@@ -50,7 +50,7 @@ exports.testBoilerplate = (name) => normalizeSpaces(`
   import ${name} from './${name}';
 
   describe('<${name} />', () => {
-
+    
   });
 `);
 
@@ -60,4 +60,4 @@ exports.indexBoilerplate = (name) => normalizeSpaces(`
   export default ${name};
 `);
 
-const normalizeSpaces = (text) => `${text.trim().replace(/ {2}/g, '')}\n`;
+const normalizeSpaces = (text) => `${text.trim().replace(/\n {2}/g, '\n')}\n`;

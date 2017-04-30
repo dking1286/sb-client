@@ -4,5 +4,7 @@ import renderer from 'react-test-renderer';
 import SkillTile from './SkillTile';
 
 describe('<SkillTile />', () => {
+  test('should have a test', () => {
 
+  });
 });

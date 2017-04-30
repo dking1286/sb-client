@@ -4,5 +4,7 @@ import renderer from 'react-test-renderer';
 import SkillsList from './SkillsList';
 
 describe('<SkillsList />', () => {
+  test('should have a test', () => {
 
+  });
 });
