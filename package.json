@@ -12,6 +12,7 @@
     "mock-api": "NODE_ENV=development nodemon mock-api",
     "generate-config:dev": "NODE_ENV=development node scripts/generateConfig",
     "generate-config:prod": "NODE_ENV=production node scripts/generateConfig",
+    "generate-config:test": "NODE_ENV=production node scripts/generateConfig",
     "generate-component": "node scripts/createComponent.js",
     "generate-container": "node scripts/createContainer.js",
     "test": "NODE_PATH=./src jest"
