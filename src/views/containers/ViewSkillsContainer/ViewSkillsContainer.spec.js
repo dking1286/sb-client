@@ -4,5 +4,7 @@ import renderer from 'react-test-renderer';
 import ViewSkillsContainer from './ViewSkillsContainer';
 
 describe('<ViewSkillsContainer />', () => {
-
+  test('should have a test', () => {
+    
+  });
 });

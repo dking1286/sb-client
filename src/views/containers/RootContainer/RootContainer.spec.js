@@ -4,5 +4,7 @@ import renderer from 'react-test-renderer';
 import RootContainer from './RootContainer';
 
 describe('<RootContainer />', () => {
-
+  test('should have a test', () => {
+    
+  });
 });

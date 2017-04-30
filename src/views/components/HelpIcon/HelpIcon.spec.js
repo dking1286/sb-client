@@ -4,5 +4,7 @@ import renderer from 'react-test-renderer';
 import HelpIcon from './HelpIcon';
 
 describe('<HelpIcon />', () => {
+  test('should have a test', () => {
 
+  });
 });
