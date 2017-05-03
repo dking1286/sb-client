@@ -1,1 +1,21 @@
 @import "../../../styles/common";
+
+@media (min-width: $mobile-width) {
+  .container {
+    background-color: $white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0.3em 0em;
+  }
+
+  .text {
+    margin: 0em;
+    padding: 1em;
+  }
+}
+@media (min-width: $laptop-width) {
+  
+}

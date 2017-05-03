@@ -1,22 +1,28 @@
 @import "../../../styles/common";
 
-.container {
-  background-color: $offwhite;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 12px;
-}
+@media (min-width: $mobile-width) {
+  .container {
+    background-color: $offwhite;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
-.heading {
-  font-size: 20px;
-  text-align: center;
-  margin-top: 0
-}
+  .heading {
+    font-size: 20px;
+    text-align: center;
+    margin: 0em;
+    padding-bottom: 0.5em;
+  }
 
-.helpIconWrapper {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
+  .helpIconWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+@media (min-width: $laptop-width) {
+  
 }
