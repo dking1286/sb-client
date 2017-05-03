@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import styles from './SkillTile.scss';
 
 const SkillTile = ({ skill }) => (
-  <div>
-    <p>{skill.name}</p>
+  <div className={styles.container}>
+    <p className={styles.text}>{skill.name}</p>
   </div>
 );
 

@@ -2,6 +2,8 @@
 @import "./fonts";
 
 $pagewidth: 900px;
+$mobile-width: 320px;
+$laptop-width: 900px;
 
 body {
   @include font-light();
