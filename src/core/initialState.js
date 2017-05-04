@@ -1,12 +1,9 @@
+import view from 'views/viewInitialState';
+import companies from 'companies/companiesInitialState';
+import roles from 'roles/rolesInitialState';
+
 export default {
-  view: {
-    currentViewName: 'DreamJobs',
-    params: {}
-  },
-  roles: {
-    currentRole: null
-  },
-  companies: {
-    currentCompanies: []
-  }
+  view,
+  companies,
+  roles
 };
