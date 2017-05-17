@@ -33,6 +33,7 @@
     "react-redux": "^5.0.4",
     "redux": "^3.6.0",
     "redux-devtools-extension": "^2.13.0",
+    "redux-little-router": "^13.1.2",
     "redux-saga": "^0.14.6",
     "redux-stack": "^1.0.1",
     "url-loader": "^0.5.8"

@@ -7,7 +7,7 @@ const HelpIcon = ({ roleDescription }) => (
   <div className={styles.container}>
     <Tooltip
       content={<TooltipContent roleDescription={roleDescription} />}
-      position={Position.BOTTOM}
+      position={Position.LEFT}
     >
       <div className={styles.innerContainer}>?</div>
     </Tooltip>
