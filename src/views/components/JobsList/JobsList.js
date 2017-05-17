@@ -9,7 +9,8 @@ const JobsList = ({ roles, viewActions }) => {
     <div className={styles.outer}>
       <div className={styles.container}>
         {roles.map((role, i) =>
-          <JobsListItem role={role} key={key++} viewActions={viewActions} />)}
+          <JobsListItem role={role} key={key++} viewActions={viewActions} />
+        )}
       </div>
     </div>
   );
