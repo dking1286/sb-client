@@ -1,25 +1,32 @@
 @import "../../../styles/common";
 
-$tiledimension: 155px;
+$tiledimension: 200px;
 
-.tile {
-  width: $tiledimension;
-  height: $tiledimension;
-  margin: 5px;
-  padding: 12px;
+@media (min-width: $mobile-width) {
+  .listItem {
+    width: 45vw;
+    height: 45vw;
+    max-width: $tiledimension;
+    max-height: $tiledimension;
+    margin: 5px;
+    padding: 5%;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    background-color: $yellow;
+    text-align: center;
+  }
+
+  .listLink {
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
 }
 
-.listItem {
-  @extend .tile;
-  display: flex;
-  align-items: center;
-  background-color: $yellow;
-  text-align: center;
-}
-
-.listLink {
-  &:hover {
-    cursor: pointer;
-    text-decoration: underline;
+@media (min-width: $laptop-width) {
+  .listItem {
+    font-size: 20px;
   }
 }

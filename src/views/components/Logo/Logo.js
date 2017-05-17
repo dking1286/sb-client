@@ -1,10 +1,13 @@
 import React from 'react';
-import logo from '../../../img/logo.png';
+import logoImage from '../../../../assets/images/logo.png';
 import styles from './Logo.scss';
 
-
 const Logo = () => (
-  <div><img className={styles.logo} src={logo}/></div>
+  <img
+    src={logoImage}
+    className={styles.container}
+    alt="Careeer logo"
+  />
 );
 
 Logo.propTypes = {};

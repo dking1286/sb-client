@@ -6,12 +6,24 @@ const {
   indexBoilerplate
 } = require('./helpers/boilerplate');
 
-const containerFolder = path.join(__dirname, '..', 'src', 'views', 'containers');
+const containerFolder = (name) => path.join(__dirname, '..', 'src', 'views', 'containers', name);
 
 const createContainer = (name) => {
+  fs.mkdirSync(containerFolder(name));
+
   fs.writeFileSync(
-    path.join(containerFolder, `${name}.js`),
+    path.join(containerFolder(name), `${name}.js`),
     containerBoilerplate(name)
+  );
+
+  fs.writeFileSync(
+    path.join(containerFolder(name), `${name}.spec.js`),
+    testBoilerplate(name)
+  );
+
+  fs.writeFileSync(
+    path.join(containerFolder(name), 'index.js'),
+    indexBoilerplate(name)
   );
 };
 

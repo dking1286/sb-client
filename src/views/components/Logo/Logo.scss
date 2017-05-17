@@ -1,4 +1,7 @@
-.logo {
-  max-width: 40px;
-  margin-top: 3px;
+@import "../../../styles/common";
+
+.container {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
 }
