@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import * as viewSelectors from 'views/viewSelectors';
 import DreamJobsContainer from '../DreamJobsContainer';
 import ViewSkillsContainer from '../ViewSkillsContainer';
 
@@ -25,8 +26,8 @@ RootContainer.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  currentViewName: state.view.currentViewName,
-  params: state.view.params
+  currentViewName: viewSelectors.getCurrentViewName(state),
+  params: viewSelectors.getParams(state)
 });
 
 export default connect(mapStateToProps, null)(RootContainer);

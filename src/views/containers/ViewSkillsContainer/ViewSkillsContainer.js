@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as rolesActionCreators from 'roles/rolesActions';
+import * as rolesSelectors from 'roles/rolesSelectors';
 import ViewSkillsPage from 'views/components/ViewSkillsPage';
 
 class ViewSkillsContainer extends React.Component {
@@ -44,7 +45,7 @@ ViewSkillsContainer.defaultProps = {
 };
 
 const mapStateToProps = (state) => ({
-  currentRole: state.roles.currentRole
+  currentRole: rolesSelectors.getCurrentRole(state)
 });
 
 const mapDispatchToProps = (dispatch) => ({
