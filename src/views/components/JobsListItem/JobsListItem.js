@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'redux-little-router';
+import { getRoleDescription } from 'roles/rolesHelpers';
 import styles from './JobsListItem.scss';
 
 const JobsListItem = ({ role }) => (
   <div className={styles.listItem}>
     <Link className={styles.listLink} href={`/roles/${role.id}`}>
-      {roleDescription(role)}
+      {getRoleDescription(role)}
     </Link>
   </div>
 );
@@ -20,7 +21,5 @@ JobsListItem.propTypes = {
     }).isRequired
   }).isRequired
 };
-
-const roleDescription = (role) => `${role.name} at ${role.company.name}`;
 
 export default JobsListItem;

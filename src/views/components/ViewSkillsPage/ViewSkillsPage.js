@@ -4,7 +4,6 @@ import { Spinner } from '@blueprintjs/core';
 import PageHeader from '../PageHeader';
 import ViewSkillsHeading from '../ViewSkillsHeading';
 import SkillsList from '../SkillsList';
-import styles from './ViewSkillsPage.scss';
 
 const ViewSkillsPage = ({ roleDescription, currentRole }) => (
   <div>

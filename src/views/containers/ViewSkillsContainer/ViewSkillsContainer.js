@@ -2,32 +2,31 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { getRoleDescription } from 'roles/rolesHelpers';
 import * as rolesActionCreators from 'roles/rolesActions';
 import * as rolesSelectors from 'roles/rolesSelectors';
+import * as routerSelectors from 'views/routerSelectors';
 import ViewSkillsPage from 'views/components/ViewSkillsPage';
 
 class ViewSkillsContainer extends React.Component {
   componentDidMount() {
-    const { params, rolesActions } = this.props;
-    rolesActions.getOne({ id: params.roleId });
+    const { roleId, rolesActions } = this.props;
+    rolesActions.getOne({ id: roleId });
   }
 
   render() {
-    const { params, currentRole } = this.props;
+    const { currentRole } = this.props;
     return (
       <ViewSkillsPage
-        roleDescription={params.roleDescription}
         currentRole={currentRole}
+        roleDescription={getRoleDescription(currentRole)}
       />
     );
   }
 }
 
 ViewSkillsContainer.propTypes = {
-  params: PropTypes.shape({
-    roleId: PropTypes.number.isRequired,
-    roleDescription: PropTypes.string.isRequired
-  }).isRequired,
+  roleId: PropTypes.number.isRequired,
   currentRole: PropTypes.shape({
     name: PropTypes.string,
     company: PropTypes.shape({
@@ -45,6 +44,7 @@ ViewSkillsContainer.defaultProps = {
 };
 
 const mapStateToProps = (state) => ({
+  roleId: Number(routerSelectors.getParams(state).roleId),
   currentRole: rolesSelectors.getCurrentRole(state)
 });
 
