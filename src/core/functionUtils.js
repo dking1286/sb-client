@@ -66,6 +66,8 @@ export const pipeThrough = (initial, ...fns) =>
  */
 export const map = (fn) => (array) => array.map(fn);
 
+export const filter = (fn) => (array) => array.filter(fn);
+
 /**
  * Flattens an array by one level of nesting
  * @param {any[]} array 

@@ -1,5 +1,4 @@
 import { createSelector } from 'reselect';
-import { idsToNumber } from 'core/functionUtils';
 
 const companyToRolesList = (company) => company.roles.map(role => ({
   id: role.id,
@@ -16,7 +15,9 @@ const companiesListToRolesList = (companies) => {
 
 export const getCurrentCompanies = createSelector(
   (state) => state.companies.currentCompanies,
-  (currentCompanies) => idsToNumber(currentCompanies)
+  (state) => state.companies.allCompanies,
+  (currentCompanies, allCompanies) =>
+    currentCompanies.map(id => allCompanies[id])
 );
 
 export const currentCompaniesRolesList = createSelector(

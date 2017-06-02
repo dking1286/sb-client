@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as companiesActionCreators from 'companies/companiesActions';
-import * as companiesSelectors from 'companies/companiesSelectors';
+import * as rolesSelectors from 'roles/rolesSelectors';
 import DreamJobsPage from 'views/components/DreamJobsPage';
 
 class DreamJobsContainer extends React.Component {
@@ -26,7 +26,7 @@ DreamJobsContainer.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  roles: companiesSelectors.currentCompaniesRolesList(state)
+  roles: rolesSelectors.currentCompaniesRolesList(state)
 });
 
 const mapDispatchToProps = (dispatch) => ({

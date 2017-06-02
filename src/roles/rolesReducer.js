@@ -4,14 +4,13 @@ import initialState from 'core/initialState';
 import { COMPANIES_GET_ALL } from 'companies/companiesActionTypes';
 import { ROLES_GET_ONE } from './rolesActionTypes';
 
-
 export default (state = initialState.roles, action) => {
   const { type, payload } = action;
   switch (type) {
     case success(COMPANIES_GET_ALL): {
       const allRoles = pipeThrough(
         payload,
-        map((company) => company.roles),
+        map(companyToRolesList),
         flatten,
         map(replaceSkillsWithIds),
         byId
@@ -34,3 +33,6 @@ const replaceSkillsWithIds = (role) => ({
   ...role,
   skills: role.skills.map(skill => skill.id)
 });
+
+const companyToRolesList = (company) =>
+  company.roles.map(role => ({ ...role, companyId: company.id }));
