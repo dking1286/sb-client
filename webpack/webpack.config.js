@@ -8,6 +8,10 @@ const fs = require('fs');
 const commonConfig = require('./common.config.js');
 
 function getConfigByEnvironment(env) {
+  if (env === 'staging') {
+    env = 'production';
+  }
+
   const envConfigPath = path.join(__dirname, `${env}.config.js`);
 
   if (!fs.existsSync(envConfigPath)) {
