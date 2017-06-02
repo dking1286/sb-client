@@ -35,3 +35,55 @@ export const idsToNumber = (object) => {
     return val;
   });
 };
+
+/**
+ * Transforms an array of objects into an object whose keys are the "id"
+ * properties of the objects in the individual array, and the values
+ * are the obejcts themselves with the "id" property converted to a number.
+ * @param {object[]} array
+ * @return {object}
+ */
+export const byId = (array) => array.reduce((acc, next) => {
+  acc[next.id] = { ...next, id: parseInt(next.id, 10) };
+  return acc;
+}, {});
+
+/**
+ * Takes an initial value, and pipes that value through a list of functions,
+ * passing the return value from each as the argument to the next.
+ * @param {any} initial
+ * @param {...function} fns
+ * @return {any}
+ */
+export const pipeThrough = (initial, ...fns) =>
+  fns.reduce((acc, f) => f(acc), initial);
+
+/**
+ * Curried data-last map function
+ * @param {function} fn
+ * @param {any[]} array
+ * @return {any[]}
+ */
+export const map = (fn) => (array) => array.map(fn);
+
+export const filter = (fn) => (array) => array.filter(fn);
+
+/**
+ * Flattens an array by one level of nesting
+ * @param {any[]} array 
+ * @return {any[]}
+ */
+export const flatten = (array) => array.reduce((acc, next) => {
+  if (Array.isArray(next)) {
+    next.forEach(item => acc.push(item));
+  } else {
+    acc.push(next);
+  }
+
+  return acc;
+}, []);
+
+export const logThrough = (x) => {
+  console.log(x);
+  return x;
+};

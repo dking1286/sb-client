@@ -1,11 +1,15 @@
-import {applyMiddleware} from 'redux';
-import {routerForBrowser} from 'redux-little-router';
+import { applyMiddleware } from 'redux';
+import { routerForBrowser } from 'redux-little-router';
+import routes from 'core/routes';
 
-const routes = {
-  '/': {
-    title: 'Careeer',
-    '/:job': {
-      title: 'Job: '
-    }
-  }
+const { reducer, middleware, enhancer } = routerForBrowser({ routes });
+
+export default {
+  reducers: {
+    router: reducer
+  },
+  enhancers: [
+    applyMiddleware(middleware),
+    enhancer
+  ]
 };

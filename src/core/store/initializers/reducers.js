@@ -1,11 +1,11 @@
-import view from '../../../views/viewReducer';
-import companies from '../../../companies/companiesReducer';
-import roles from '../../../roles/rolesReducer';
+import companies from 'companies/companiesReducer';
+import roles from 'roles/rolesReducer';
+import skills from 'skills/skillsReducer';
 
 export default {
   reducers: {
-    view,
     companies,
-    roles
+    roles,
+    skills
   }
 };

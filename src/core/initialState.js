@@ -1,9 +1,9 @@
-import view from 'views/viewInitialState';
 import companies from 'companies/companiesInitialState';
 import roles from 'roles/rolesInitialState';
+import skills from 'skills/skillsInitialState';
 
 export default {
-  view,
   companies,
-  roles
+  roles,
+  skills
 };
