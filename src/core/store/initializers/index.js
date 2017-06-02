@@ -4,8 +4,8 @@ import reducers from './reducers';
 import reduxLittleRouter from './reduxLittleRouter';
 
 export default [
-  reduxSaga,
-  reduxDevTools,
   reducers,
-  reduxLittleRouter
+  reduxLittleRouter,
+  reduxSaga,
+  reduxDevTools // This should come after all other enhancers in the stack
 ];

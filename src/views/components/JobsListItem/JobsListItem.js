@@ -1,21 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'redux-little-router';
 import styles from './JobsListItem.scss';
 
-const JobsListItem = ({ role, viewActions }) => (
+const JobsListItem = ({ role }) => (
   <div className={styles.listItem}>
-    <button
-      className={styles.listLink}
-      onClick={() => viewActions.change({
-        currentViewName: 'ViewSkills',
-        params: {
-          roleId: role.id,
-          roleDescription: roleDescription(role)
-        }
-      })}
-    >
+    <Link className={styles.listLink} href={`/roles/${role.id}`}>
       {roleDescription(role)}
-    </button>
+    </Link>
   </div>
 );
 
@@ -26,9 +18,6 @@ JobsListItem.propTypes = {
     company: PropTypes.shape({
       name: PropTypes.string.isRequired
     }).isRequired
-  }).isRequired,
-  viewActions: PropTypes.shape({
-    change: PropTypes.func.isRequired
   }).isRequired
 };
 

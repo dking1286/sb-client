@@ -5,19 +5,18 @@ import PageHeader from '../PageHeader';
 import JobsList from '../JobsList';
 import styles from './DreamJobsPage.scss';
 
-const DreamJobsPage = ({ roles, viewActions }) => (
+const DreamJobsPage = ({ roles }) => (
   <div className={styles.container}>
     <div className={styles.innerContainer}>
       <PageHeader />
       <DreamJobsHeading />
-      <JobsList roles={roles} viewActions={viewActions} />
+      <JobsList roles={roles} />
     </div>
   </div>
 );
 
 DreamJobsPage.propTypes = {
-  roles: PropTypes.arrayOf(PropTypes.object).isRequired,
-  viewActions: PropTypes.objectOf(PropTypes.func).isRequired
+  roles: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
 export default DreamJobsPage;

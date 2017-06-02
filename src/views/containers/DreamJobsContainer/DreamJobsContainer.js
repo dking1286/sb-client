@@ -4,7 +4,6 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as companiesActionCreators from 'companies/companiesActions';
 import * as companiesSelectors from 'companies/companiesSelectors';
-import * as viewActionCreators from 'views/viewActions';
 import DreamJobsPage from 'views/components/DreamJobsPage';
 
 class DreamJobsContainer extends React.Component {
@@ -14,22 +13,16 @@ class DreamJobsContainer extends React.Component {
   }
 
   render() {
-    const { roles, viewActions } = this.props;
+    const { roles } = this.props;
     return (
-      <DreamJobsPage
-        roles={roles}
-        viewActions={viewActions}
-      />
+      <DreamJobsPage roles={roles} />
     );
   }
 }
 
 DreamJobsContainer.propTypes = {
   roles: PropTypes.arrayOf(PropTypes.object).isRequired,
-  companiesActions: PropTypes.objectOf(PropTypes.func).isRequired,
-  viewActions: PropTypes.shape({
-    change: PropTypes.func.isRequired
-  }).isRequired
+  companiesActions: PropTypes.objectOf(PropTypes.func).isRequired
 };
 
 const mapStateToProps = (state) => ({
@@ -38,7 +31,6 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   companiesActions: bindActionCreators(companiesActionCreators, dispatch),
-  viewActions: bindActionCreators(viewActionCreators, dispatch)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(DreamJobsContainer);

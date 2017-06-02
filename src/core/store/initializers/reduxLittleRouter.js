@@ -5,6 +5,11 @@ import routes from 'core/routes';
 const { reducer, middleware, enhancer } = routerForBrowser({ routes });
 
 export default {
-  reducers: { router: reducer },
-  enhancers: [enhancer, applyMiddleware(middleware)]
+  reducers: {
+    router: reducer
+  },
+  enhancers: [
+    applyMiddleware(middleware),
+    enhancer
+  ]
 };

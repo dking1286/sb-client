@@ -5,16 +5,14 @@ import ViewSkillsContainer from '../ViewSkillsContainer';
 
 
 const RootContainer = () => (
-  <Fragment forRoute="/">
-    <div>
-      <Fragment forRoute="/home">
-        <DreamJobsContainer />
-      </Fragment>
-      <Fragment forRoute="/roles/:roleId">
-        <ViewSkillsContainer />
-      </Fragment>
-    </div>
-  </Fragment>
+  <div>
+    <Fragment forRoute="/">
+      <DreamJobsContainer />
+    </Fragment>
+    <Fragment forRoute="/roles/:roleId">
+      <ViewSkillsContainer />
+    </Fragment>
+  </div>
 );
 
 RootContainer.propTypes = {

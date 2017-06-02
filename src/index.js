@@ -15,11 +15,15 @@ import '@blueprintjs/core/dist/blueprint.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { RouterProvider } from 'redux-little-router';
+import { RouterProvider, initializeCurrentLocation } from 'redux-little-router';
 import createCustomStore from 'core/store/createCustomStore';
 import RootContainer from 'views/containers/RootContainer';
 
 const store = createCustomStore();
+const initialLocation = store.getState().router;
+if (initialLocation) {
+  store.dispatch(initializeCurrentLocation(initialLocation));
+}
 
 ReactDOM.render(
   <Provider store={store}>

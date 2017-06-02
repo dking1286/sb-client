@@ -1,8 +1,6 @@
 export default {
   '/': {
-    '/home': {
-      title: 'Careeer!'
-    },
+    title: 'Careeer!',
     '/roles/:roleId': {
       title: 'Careeer!'
     }
