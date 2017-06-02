@@ -2,6 +2,7 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const config = require('config');
 
 module.exports = {
   entry: {
@@ -95,6 +96,9 @@ module.exports = {
       names: ['vendor', 'manifest'],
       minChunks: Infinity
     }),
-    new webpack.NoEmitOnErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin(),
+    new webpack.DefinePlugin({
+      CONFIG: JSON.stringify(config)
+    })
   ]
 };
