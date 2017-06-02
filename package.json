@@ -36,6 +36,7 @@
     "redux-little-router": "^13.1.2",
     "redux-saga": "^0.14.6",
     "redux-stack": "^1.0.1",
+    "reselect": "^3.0.1",
     "url-loader": "^0.5.8"
   },
   "devDependencies": {
