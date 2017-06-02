@@ -2,26 +2,21 @@ import { success } from 'core/actionHelpers';
 import { byId, pipeThrough, map, flatten } from 'core/functionUtils';
 import initialState from 'core/initialState';
 import { COMPANIES_GET_ALL } from 'companies/companiesActionTypes';
-import { ROLES_GET_ONE } from './rolesActionTypes';
 
-
-export default (state = initialState.roles, action) => {
+export default (state = initialState.skills, action) => {
   const { type, payload } = action;
   switch (type) {
     case success(COMPANIES_GET_ALL): {
-      const allRoles = pipeThrough(
+      const allSkills = pipeThrough(
         payload,
         map((company) => company.roles),
         flatten,
-        map(replaceSkillsWithIds),
+        map((role) => role.skills),
+        flatten,
         byId
       );
 
-      return { ...state, allRoles };
-    }
-
-    case success(ROLES_GET_ONE): {
-      return { ...state, currentRole: payload };
+      return { ...state, allSkills };
     }
 
     default: {
@@ -29,8 +24,3 @@ export default (state = initialState.roles, action) => {
     }
   }
 };
-
-const replaceSkillsWithIds = (role) => ({
-  ...role,
-  skills: role.skills.map(skill => skill.id)
-});

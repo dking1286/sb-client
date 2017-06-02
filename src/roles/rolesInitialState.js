@@ -1,3 +1,4 @@
 export default {
-  currentRole: null
+  currentRole: null,
+  allRoles: {}
 };
