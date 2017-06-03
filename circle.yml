@@ -11,7 +11,5 @@ dependencies:
     - ~/.cache/yarn
 
 test:
-  pre:
-    - yarn run generate-config:test
   override:
     - yarn test
