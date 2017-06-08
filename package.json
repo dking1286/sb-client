@@ -7,10 +7,10 @@
   "author": "Daniel King <daniel.oliver.king@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start:dev": "NODE_ENV=development webpack-dev-server --colors --config webpack/webpack.config.js",
+    "start:dev": "NODE_ENV=development webpack-dev-server --progress --colors --config webpack/webpack.config.js",
     "start:prod": "NODE_ENV=production node server",
-    "build:staging": "NODE_ENV=staging webpack --verbose --progress --colors --config webpack/webpack.config.js",
-    "build:prod": "NODE_ENV=production webpack --verbose --progress --colors --config webpack/webpack.config.js",
+    "build:staging": "NODE_ENV=staging webpack --progress --colors --config webpack/webpack.config.js",
+    "build:prod": "NODE_ENV=production webpack --progress --colors --config webpack/webpack.config.js",
     "mock-api": "NODE_ENV=development nodemon mock-api",
     "generate-component": "node scripts/createComponent.js",
     "generate-container": "node scripts/createContainer.js",
